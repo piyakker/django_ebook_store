@@ -23,3 +23,10 @@ def add_cart_item(request):
     price = Ebook.objects.get(pk=book_id).price
     item = CartItem.objects.create(title = title, price = price)
     return HttpResponseRedirect('/store')
+
+
+@ csrf_exempt
+def del_cart_item(request):
+    item_id = request.POST['item_id']
+    CartItem.objects.get(pk=item_id).delete()
+    return HttpResponseRedirect('/store/cart')

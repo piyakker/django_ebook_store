@@ -4,7 +4,14 @@
 {% block content %}
   <ul class="list-group mt-4">
     {% for item in cart_items %}
-    <li class="list-group-item">{{ item.title }}</li>
+    <li class="list-group-item">
+      {{ item.title }}
+      <div class="float-end">
+        <form class="form-inline" method="post" action="/store/cart/del_cart_item/">
+          <button type="submit" class="btn btn-danger" name="item_id" value="{{ item.id }}">Delete</button>
+        </form>
+      </div>
+    </li>
     {% endfor %}
     <li class="list-group-item active" aria-current="true">Total price: ${{ cart_total }}</li>
   </ul>
