@@ -3,7 +3,8 @@
 
 {% block content %}
   <ul class="list-group mt-4">
-    <li class="list-group-item">Cart is empty</li>
-
+    {% for item in cart_items %}
+    <li class="list-group-item">{{ item.title }}</li>
+    {% endfor %}
   </ul>
 {% endblock %}
