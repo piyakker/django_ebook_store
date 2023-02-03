@@ -7,8 +7,13 @@ def store_view(request):
     return render(request, 'Store/index.html', ebooks)
 
 def cart_view(request):
+    cart_item = CartItem.objects.all()
+    cart_total = 0
+    for item in cart_item:
+        cart_total += item.price
     return render(request, 'Store/cart.html', {
-        'cart_items': CartItem.objects.all()
+        'cart_items': cart_item,
+        'cart_total': cart_total
     })
 
 @ csrf_exempt

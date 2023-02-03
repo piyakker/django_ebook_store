@@ -6,5 +6,6 @@
     {% for item in cart_items %}
     <li class="list-group-item">{{ item.title }}</li>
     {% endfor %}
+    <li class="list-group-item active" aria-current="true">Total price: ${{ cart_total }}</li>
   </ul>
 {% endblock %}
