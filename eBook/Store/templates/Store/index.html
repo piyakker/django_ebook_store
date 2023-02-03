@@ -4,8 +4,19 @@
 {% block content %}
   <h1>Store</h1>
   <ul>
-  {% for E in eBooks %}
-    <li>{{ E.title }} <br> Prices: {{ E.price }}</li>
-  {% endfor %}
+    <div class="row">
+      {% for E in eBooks %}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ E.cvr_url }}" class="card-img-top" alt="book image">
+          <div class="card-body">
+            <h5 class="card-title">{{ E.title }}</h5>
+            <p class="card-text">Prices: {{ E.price }}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </ul>
 {% endblock %}
