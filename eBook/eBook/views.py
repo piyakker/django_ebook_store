@@ -1,7 +1,4 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("""
-    <h1>Welcome to ebook store</h1>
-    <img src="https://i.ibb.co/Y7Yq32N/all-bk-set.png">
-    """)
+    return render(request, 'Home/index.html')
