@@ -11,7 +11,10 @@
           <h5 class="card-title">{{ E.title }}</h5>
           <p class="card-text">Prices: {{ E.price }}</p>
           <form action="cart_add_item/" method="post">
-            <button class="btn btn-primary" type="submit" name="book_id" value="{{ E.id }}">Add to Cart</button>
+            <button class="btn btn-primary" type="submit" name="book_id" value="{{ E.id }}">
+              <i class="fa-solid fa-cart-plus"></i>
+              Add to Cart
+            </button>
           </form>
         </div>
       </div>

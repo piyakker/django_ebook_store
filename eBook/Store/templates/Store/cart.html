@@ -9,7 +9,10 @@
       {{ item.title }}
       <div class="float-end">
         <form class="form-inline" method="post" action="/store/cart/del_cart_item/">
-          <button type="submit" class="btn btn-danger" name="item_id" value="{{ item.id }}">Delete</button>
+          <button type="submit" class="btn btn-danger" name="item_id" value="{{ item.id }}">
+            <i class="fa-solid fa-sack-xmark"></i>
+            Delete
+          </button>
         </form>
       </div>
     </li>
